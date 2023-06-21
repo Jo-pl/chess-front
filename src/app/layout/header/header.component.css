@@ -11,6 +11,7 @@ header{
     border-left: 2px solid var(--clr-gray);
     border-right: 2px solid var(--clr-gray);
     border-radius:  0px 0px 15px 15px;
+    height:91px;
 }
 
 .icon-mr-right{
@@ -19,4 +20,11 @@ header{
 
 .icon-mr-left{
     margin-left:10px;
+}
+
+.logo{
+    position:absolute;
+    top:5px;
+    left:50%;
+    transform: translateX(-50%);
 }

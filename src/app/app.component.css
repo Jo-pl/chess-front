@@ -3,3 +3,9 @@ app-header{
     justify-content: center;
     width:100%;
 }
+
+app-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

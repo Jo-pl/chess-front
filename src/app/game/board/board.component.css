@@ -44,3 +44,10 @@
 .board-grid >*:nth-child(64){
     border-radius:  0 0 12px 0  ;
 }
+
+i{
+    user-drag: none;
+    -webkit-user-drag: none; /* For Safari */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari */
+}

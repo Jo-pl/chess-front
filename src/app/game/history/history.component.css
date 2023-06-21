@@ -22,10 +22,6 @@ ul{
     font-size: 1.5em;
 }
 
-li{
-
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 10px;
@@ -43,7 +39,7 @@ li{
 
 @media only screen and (max-width: 1200px) {
     .history-container{
-        height: 400px;
+        height: 360px;
     }
 }
 

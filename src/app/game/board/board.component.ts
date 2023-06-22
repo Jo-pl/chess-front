@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   board: string[] = [];
+  selectedSquare:Number | undefined;
   constructor() { }
 
   ngOnInit(): void {
@@ -24,12 +25,16 @@ export class BoardComponent implements OnInit {
     this.board = this.board.concat(["rook","knight","bishop","king","queen","bishop","knight","rook"]);    
   }
 
-  isClass1(index: number): boolean {
+  isColored(index: number): boolean {
     return (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
   }
 
-  isClass2(index: number): boolean {
-    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 1) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 0);
+  SelectSquare(index:Number){
+    if(this.selectedSquare != undefined){
+      console.log('is undefined');
+    }else{
+      console.log(index);
+    }
   }
 
 }

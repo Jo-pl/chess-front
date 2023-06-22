@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home/home.component';
 import { BoardComponent } from './game/board/board.component';
 import { SquareComponent } from './game/square/square.component';
 import { HistoryComponent } from './game/history/history.component';
+import { MainButtonComponent } from './shared/main-button/main-button.component';
+import { PlayerInfoComponent } from './shared/player-info/player-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HistoryComponent } from './game/history/history.component';
     HomeComponent,
     BoardComponent,
     SquareComponent,
-    HistoryComponent
+    HistoryComponent,
+    MainButtonComponent,
+    PlayerInfoComponent
   ],
   imports: [
     BrowserModule,

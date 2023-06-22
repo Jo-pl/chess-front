@@ -1,5 +1,5 @@
 <div class="board-grid">
-    <div *ngFor="let i of rowCol" class="square">
+    <div *ngFor="let i of rowCol;let index=index;" [ngClass]="isClass1(index)?'square square-white':' square square-purple'">
         <i class="fa-solid fa-chess-pawn fa-xl"></i>
     </div>
 </div>

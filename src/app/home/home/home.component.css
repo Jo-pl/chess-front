@@ -48,3 +48,9 @@ section{
     row-gap: 5px;
 }
 
+@media only screen and (max-width: 900px) {
+    .player {
+      display: none;
+    }
+}
+

@@ -1,0 +1,20 @@
+.rounded-item{
+    border: 3px solid var(--clr-purple);
+    border-radius: 15px;
+}
+
+.player-name{
+    font-weight: 700;
+    font-size: 1em;
+    align-self: center;
+    justify-self: center;
+}
+
+.m-auto{
+    margin-right:auto;
+}
+
+.row-container{
+    display: flex;
+    justify-content: space-between;
+}

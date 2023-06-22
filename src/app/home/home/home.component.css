@@ -39,3 +39,12 @@ section{
 .board{
     grid-column: 2 / span 3;
 }
+
+.player{
+    display:flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: flex-start;
+    row-gap: 5px;
+}
+

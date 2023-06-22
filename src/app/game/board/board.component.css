@@ -24,9 +24,18 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    border:1px solid white;
+    
     height:100%;
     width:100%;
+}
+
+.square-purple{
+    border:1px solid var(--clr-gray);
+    background-color:var(--clr-soft-purple);
+}
+
+.square-white{
+    border:1px solid var(--clr-gray);
 }
 
 .board-grid >*:first-child{

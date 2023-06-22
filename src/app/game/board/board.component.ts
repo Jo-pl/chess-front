@@ -12,4 +12,12 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isClass1(index: number): boolean {
+    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
+  }
+
+  isClass2(index: number): boolean {
+    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 1) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 0);
+  }
+
 }

@@ -28,3 +28,15 @@ header{
     left:50%;
     transform: translateX(-50%);
 }
+
+a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+img{
+    user-drag: none;
+    -webkit-user-drag: none; /* For Safari */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari */
+}

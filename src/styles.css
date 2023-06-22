@@ -1,6 +1,7 @@
 :root{
   --clr-void: #0E0B16;
-  --clr-purple: #A239CA;
+  --clr-purple: hsl(283, 58%, 51%);
+  --clr-soft-purple:hsla(283, 58%, 51%,0.4);
   --clr-blue:#4717f6;
   --clr-gray:#E7DFDD;
   --ff-main:'Khand', sans-serif;

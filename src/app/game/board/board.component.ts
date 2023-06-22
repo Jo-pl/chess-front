@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  rowCol: any[] = Array(64).fill({});
+  board: string[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    //Initalize board state
+    this.board = this.board.concat(["rook","knight","bishop","queen","king","bishop","knight","rook"]);
+    for(let i=0;i<8;i++){
+      this.board.push("pawn");
+    }
+    for(let i=0;i<8*4;i++){
+      this.board.push("null");
+    }
+    for(let i=0;i<8;i++){
+      this.board.push("pawn");
+    }
+    this.board = this.board.concat(["rook","knight","bishop","king","queen","bishop","knight","rook"]);    
   }
 
   isClass1(index: number): boolean {

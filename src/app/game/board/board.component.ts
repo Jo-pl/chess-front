@@ -30,11 +30,8 @@ export class BoardComponent implements OnInit {
   }
 
   SelectSquare(index:Number){
-    if(this.selectedSquare != undefined){
-      console.log('is undefined');
-    }else{
+      this.selectedSquare = index;
       console.log(index);
-    }
   }
 
 }

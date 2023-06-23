@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SquareComponent implements OnInit {
 
   @Input() piece: string = "";
+  @Input() isSelected:boolean = false;
   constructor() {
     
   }

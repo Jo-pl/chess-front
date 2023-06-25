@@ -1,3 +1,5 @@
 <div class="board-grid">
-    <app-square *ngFor="let i of board;let index=index;" [isSelected]="(selectedSquare==index)" [piece]="board[index]" [ngClass]="isColored(index)?'square square-white':' square square-purple'" (click)="SelectSquare(index)"></app-square>
+    <div class="board-row" *ngFor="let row of chess.board();let index1 = index">
+        <app-square *ngFor="let cell of row;let index2 = index" [chessObject]="cell" [ngClass]="isColored(index1*8+index2)?'square square-purple':' square square-white'"></app-square>
+    </div>
 </div>

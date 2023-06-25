@@ -7,8 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
 
-  @Input() piece: string = "";
+  @Input() chessObject: any = null;
   @Input() isSelected:boolean = false;
+  pieceMap = new Map([
+    ['p', "pawn"],
+    ['r', "rook"],
+    ['b', "bishop"],
+    ['n', "knight"],
+    ['q', "queen"],
+    ['k', "king"],
+  ]);
+
   constructor() {
     
   }

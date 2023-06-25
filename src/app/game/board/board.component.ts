@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Chess } from 'chess.js'
 
 @Component({
   selector: 'app-board',
@@ -6,23 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  board: string[] = [];
+
   selectedSquare:Number | undefined;
+  chess = new Chess();
+
   constructor() { }
 
   ngOnInit(): void {
-    //Initalize board state
-    this.board = this.board.concat(["rook","knight","bishop","queen","king","bishop","knight","rook"]);
-    for(let i=0;i<8;i++){
-      this.board.push("pawn");
-    }
-    for(let i=0;i<8*4;i++){
-      this.board.push("null");
-    }
-    for(let i=0;i<8;i++){
-      this.board.push("pawn");
-    }
-    this.board = this.board.concat(["rook","knight","bishop","king","queen","bishop","knight","rook"]);    
+
   }
 
   isColored(index: number): boolean {
@@ -30,8 +22,9 @@ export class BoardComponent implements OnInit {
   }
 
   SelectSquare(index:Number){
-      this.selectedSquare = index;
-      console.log(index);
+    console.log(this.chess.board());
+    this.selectedSquare = index;
+    console.log(index);
   }
-
+  
 }

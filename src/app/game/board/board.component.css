@@ -6,7 +6,7 @@
     grid-auto-rows: 100px;
 }
 
-.board-row{
+.board-col{
     display: contents;
 }
 

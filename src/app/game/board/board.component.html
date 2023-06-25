@@ -1,5 +1,10 @@
 <div class="board-grid">
-    <div class="board-row" *ngFor="let row of chess.board();let index1 = index">
-        <app-square *ngFor="let cell of row;let index2 = index" [chessObject]="cell" [ngClass]="isColored(index1*8+index2)?'square square-purple':' square square-white'"></app-square>
+    <div class="board-col" *ngFor="let col of chess.board();let index1 = index">
+        <app-square *ngFor="let cell of col;let index2 = index" 
+        [chessObject]="cell"
+        [square]="(rowAss[index2]+colAss[7-index1])"
+        [ngClass]="isColored(index1*8+index2)?'square square-purple':' square square-white'" 
+        (click)="selectSquare(rowAss[index2]+colAss[7-index1])">
+        </app-square>
     </div>
 </div>

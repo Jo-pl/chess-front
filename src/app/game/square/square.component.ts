@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChessObject } from 'src/app/chess-object';
 
 @Component({
   selector: 'app-square',
@@ -7,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
 
-  @Input() chessObject: any = null;
+  @Input() chessObject: ChessObject|null = null;
+  @Input() square: String = "";
   @Input() isSelected:boolean = false;
   pieceMap = new Map([
     ['p', "pawn"],
@@ -20,6 +22,20 @@ export class SquareComponent implements OnInit {
 
   constructor() {
     
+  }
+
+  getClass(){
+    let res = "";
+    if(this.chessObject){
+      res += ('fa-solid fa-2xl fa-chess-'+this.pieceMap.get(this.chessObject.type)+' ');
+    }
+    if(this.chessObject?.color == 'b'){
+      res+='black-player ';
+    }
+    if(this.isSelected){
+      res+='selected';
+    }
+    return res;
   }
 
   ngOnInit(): void {

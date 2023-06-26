@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Chess } from 'chess.js'
+import { ChessObject } from 'src/app/chess-object';
 
 @Component({
   selector: 'app-board',
@@ -6,18 +8,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  rowCol: any[] = Array(64).fill({});
+
+  selectedSquare: string|undefined;
+  rowAss:string[] = ['a','b','c','d','e','f','g','h'];
+  colAss:number[] = [1,2,3,4,5,6,7,8];
+
+  chess = new Chess();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  isClass1(index: number): boolean {
+  isColored(index: number): boolean {
     return (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
   }
 
-  isClass2(index: number): boolean {
-    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 1) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 0);
+  selectSquare(sq:string){
+    let found = false;
+    this.chess.board().forEach(col => {
+      col.forEach(row=>{
+        if(row?.square == sq){
+          found = true;
+        }
+      });
+    });
+    if(this.selectedSquare == null && !found){return;};
+    if(this.selectedSquare == null){this.selectedSquare = sq;return;};
+    //A square has already been selected
+    //Try a move 
+    try{
+    let res = this.chess.move({ from: this.selectedSquare, to: sq, promotion: 'q' });
+    this.selectedSquare = undefined;
+    }catch(ex){
+      console.log(ex);
+      this.selectedSquare = undefined;
+    }
   }
 
 }

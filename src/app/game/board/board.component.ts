@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chess } from 'chess.js'
-import { ChessObject } from 'src/app/chess-object';
+import { ChessObject } from 'src/app/model/chess-object';
 import { HistoryService } from 'src/app/services/history.service';
 @Component({
   selector: 'app-board',

@@ -11,6 +11,7 @@ import { SquareComponent } from './game/square/square.component';
 import { HistoryComponent } from './game/history/history.component';
 import { MainButtonComponent } from './shared/main-button/main-button.component';
 import { PlayerInfoComponent } from './shared/player-info/player-info.component';
+import { LoginComponent } from './home/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PlayerInfoComponent } from './shared/player-info/player-info.component'
     SquareComponent,
     HistoryComponent,
     MainButtonComponent,
-    PlayerInfoComponent
+    PlayerInfoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -3,9 +3,9 @@ button{
     font-size: 1.5em;
     background-color:var(--clr-soft-purple);
     color:var(--clr-gray);
-    border-radius: 10px;
-    padding:0px 30px;
+    border-radius: 12px;
+    padding:0px 10px;
     outline: none;
     border:none;
-    border:1px solid var(--clr-gray);
+    border:1px solid var(--clr-purple);
 }

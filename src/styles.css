@@ -48,6 +48,10 @@ body {
   background-color: var(--clr-void);
 }
 
+section{
+  width:85%;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;

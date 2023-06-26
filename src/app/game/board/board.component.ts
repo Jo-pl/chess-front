@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chess } from 'chess.js'
 import { ChessObject } from 'src/app/chess-object';
-
+import { HistoryService } from 'src/app/history.service';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -12,10 +12,12 @@ export class BoardComponent implements OnInit {
   selectedSquare: string|undefined;
   rowAss:string[] = ['a','b','c','d','e','f','g','h'];
   colAss:number[] = [1,2,3,4,5,6,7,8];
-
   chess = new Chess();
+  historyService:HistoryService;
 
-  constructor() { }
+  constructor(historyService:HistoryService) {
+    this.historyService = historyService;
+  }
 
   ngOnInit(): void {
   }
@@ -39,6 +41,7 @@ export class BoardComponent implements OnInit {
     //Try a move 
     try{
     let res = this.chess.move({ from: this.selectedSquare, to: sq, promotion: 'q' });
+    this.historyService.historyList.push(this.selectedSquare + "-" + sq);
     this.selectedSquare = undefined;
     }catch(ex){
       console.log(ex);

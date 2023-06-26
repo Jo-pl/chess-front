@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chess } from 'chess.js'
 import { ChessObject } from 'src/app/chess-object';
-import { HistoryService } from 'src/app/history.service';
+import { HistoryService } from 'src/app/services/history.service';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -28,7 +28,7 @@ export class BoardComponent implements OnInit {
 
   selectSquare(sq:string){
     let found = false;
-    this.chess.board().forEach(col => {
+    this.chess.board().forEach((col: any[]) => {
       col.forEach(row=>{
         if(row?.square == sq){
           found = true;

@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
-import { HistoryService } from './history.service';
+import { HistoryService } from '../services/history.service';
 
 describe('HistoryService', () => {
   let service: HistoryService;

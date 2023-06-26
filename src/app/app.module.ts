@@ -12,6 +12,7 @@ import { HistoryComponent } from './game/history/history.component';
 import { MainButtonComponent } from './shared/main-button/main-button.component';
 import { PlayerInfoComponent } from './shared/player-info/player-info.component';
 import { LoginComponent } from './home/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './home/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

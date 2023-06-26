@@ -18,7 +18,6 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.chess.board());
   }
 
   isColored(index: number): boolean {
@@ -34,13 +33,12 @@ export class BoardComponent implements OnInit {
         }
       });
     });
-    console.log(this.selectedSquare);
     if(this.selectedSquare == null && !found){return;};
     if(this.selectedSquare == null){this.selectedSquare = sq;return;};
     //A square has already been selected
     //Try a move 
     try{
-    let res = this.chess.move(this.selectedSquare+sq);
+    let res = this.chess.move({ from: this.selectedSquare, to: sq, promotion: 'q' });
     this.selectedSquare = undefined;
     }catch(ex){
       console.log(ex);

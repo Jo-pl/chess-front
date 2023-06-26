@@ -33,3 +33,15 @@ i{
         transform: rotate(2turn);
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    @keyframes changeSize {
+        from {
+          font-size: 2em;
+        }
+      
+        to {
+            font-size: 2.5em;
+        }
+    }
+}

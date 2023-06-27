@@ -1,6 +1,6 @@
 .rounded-item{
     border: 3px solid var(--clr-purple);
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 .player-name{

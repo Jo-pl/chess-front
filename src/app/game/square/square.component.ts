@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChessObject } from 'src/app/chess-object';
+import { ChessObject } from 'src/app/model/chess-object';
 
 @Component({
   selector: 'app-square',

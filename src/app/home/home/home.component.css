@@ -1,0 +1,56 @@
+app-home{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:100vh;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+
+section{
+    width:85%;
+}
+
+.board-section{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .board-section{
+        grid-auto-flow: row;
+    }
+}
+
+.history{
+    align-self: flex-start;
+    grid-column: 5;
+}
+
+.board{
+    grid-column: 2 / span 3;
+}
+
+.player{
+    display:flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: flex-start;
+    row-gap: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+    .player {
+      display: none;
+    }
+}
+

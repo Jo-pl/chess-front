@@ -1,0 +1,42 @@
+header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:85%;
+    padding:10px 10px;
+    font-weight: 700;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--clr-gray);
+    border-left: 2px solid var(--clr-gray);
+    border-right: 2px solid var(--clr-gray);
+    border-radius:  0px 0px 15px 15px;
+    height:91px;
+}
+
+.icon-mr-right{
+    margin-right:10px;
+}
+
+.icon-mr-left{
+    margin-left:10px;
+}
+
+.logo{
+    position:absolute;
+    top:5px;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+img{
+    user-drag: none;
+    -webkit-user-drag: none; /* For Safari */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari */
+}

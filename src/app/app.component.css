@@ -1,0 +1,10 @@
+app-header{
+    display:flex;
+    justify-content: center;
+}
+
+app-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

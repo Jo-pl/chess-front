@@ -1,0 +1,17 @@
+
+<main>
+    <div class="page-container">
+        <h1 *ngIf="this.router.url == '/login'">Login</h1>
+        <h1 *ngIf="this.router.url == '/register'">Register</h1>
+        <section class="login-section">
+            <form class="login-container" method="post">
+                <label>Email:</label>
+                <input type="email" name="" id="">
+                <label>Password:</label>
+                <input type="password" name="" id="">
+                <app-main-button [text]="'Submit'"></app-main-button>
+            </form>
+        </section>
+        <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>
+    </div>
+<main>

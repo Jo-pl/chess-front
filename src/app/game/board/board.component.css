@@ -24,22 +24,6 @@
     }
 }
 
-.board-grid >*:first-child{
-    border-radius: 12px 0 0 0 ;
-}
-
-.board-grid >*:nth-child(8){
-    border-radius:  0 12px 0 0 ;
-}
-
-.board-grid >*:nth-child(57){
-    border-radius:  0 0 0 12px ;
-}
-
-.board-grid >*:nth-child(64){
-    border-radius:  0 0 12px 0  ;
-}
-
 .square{
     display:flex;
     align-items: center;

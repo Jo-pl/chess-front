@@ -1,6 +1,7 @@
 
 <main>
     <div class="page-container">
+        <!--
         <h1 *ngIf="this.router.url == '/login'">Login</h1>
         <h1 *ngIf="this.router.url == '/register'">Register</h1>
         <section class="login-section">
@@ -13,5 +14,11 @@
             </form>
         </section>
         <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>
+        -->
+        <amplify-authenticator>
+            
+          <button (click)="signOut">Sign Out</button>
+        </amplify-authenticator>
+        <button (click)="signOut">Sign Out</button>
     </div>
 <main>

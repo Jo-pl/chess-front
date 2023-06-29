@@ -13,6 +13,8 @@ import { MainButtonComponent } from './shared/main-button/main-button.component'
 import { PlayerInfoComponent } from './shared/player-info/player-info.component';
 import { LoginComponent } from './home/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AmplifyAuthenticatorModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

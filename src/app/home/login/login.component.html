@@ -1,20 +1,21 @@
-
-<main>
-    <div class="page-container">
-        <h1 *ngIf="this.router.url == '/login'">Login</h1>
-        <h1 *ngIf="this.router.url == '/register'">Register</h1>
-        <section class="login-section">
-            <form [formGroup]="loginRegisterForm" class="login-container" method="post" (ngSubmit)="this.router.url == '/register'?signUp():signIn()">
-                <label>Email:</label>
-                <input type="email" formControlName="email" id="email" autocomplete="on" required>
-                <label>Password:</label>
-                <input type="password" formControlName="password" id="password" autocomplete="on" required>
-                <label>Code:</label>
-                <input type="text" formControlName="code" id="code" autocomplete="on" required>
-                <app-main-button [text]="'Submit'"></app-main-button>
-            </form>
-        </section>
-        <button (click)="verifyEmailValidationCode()">aaa</button>
-        <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>        
+<div class="main">
+    <!--<img class="bg" src="../../../assets/background-login.svg">-->
+    <div class="right">  
+            <div class="login-container">
+            <div class="top-user-container">
+                <div class="user-container">
+                    <img class="user-icon" src="../../../assets/user-logo.svg" alt="user-icon"/>                    
+                </div>
+                <span>Login</span>
+            </div>            
+            <div class="links-container">
+                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+            </div>
+            <span class="pos-rel"><i class="fa-solid fa-user fa-xl"></i><input type="email" name="" id="email" placeholder="Email"></span>
+            <span class="pos-rel"><i class="fa-solid fa-user fa-xl"></i><input type="password" name="" id="password" placeholder="Password"></span>
+            <button type="submit">Submit</button>
+        </div>
     </div>
-<main>
+<div>

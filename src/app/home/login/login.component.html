@@ -4,14 +4,17 @@
         <h1 *ngIf="this.router.url == '/login'">Login</h1>
         <h1 *ngIf="this.router.url == '/register'">Register</h1>
         <section class="login-section">
-            <form class="login-container" method="post">
+            <form [formGroup]="loginRegisterForm" class="login-container" method="post" (ngSubmit)="this.router.url == '/register'?signUp():signIn()">
                 <label>Email:</label>
-                <input type="email" name="" id="">
+                <input type="email" formControlName="email" id="email" autocomplete="on" required>
                 <label>Password:</label>
-                <input type="password" name="" id="">
+                <input type="password" formControlName="password" id="password" autocomplete="on" required>
+                <label>Code:</label>
+                <input type="text" formControlName="code" id="code" autocomplete="on" required>
                 <app-main-button [text]="'Submit'"></app-main-button>
             </form>
         </section>
-        <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>
+        <button (click)="verifyEmailValidationCode()">aaa</button>
+        <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>        
     </div>
 <main>

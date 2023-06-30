@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chessfront-dev-140919-authRole",
+      "UnauthRoleArn": "arn:aws:iam::897067570351:role/amplify-chessfront-dev-140919-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::897067570351:role/amplify-chessfront-dev-140919-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-chessfront-dev-140919-deployment",
+      "UnauthRoleName": "amplify-chessfront-dev-140919-unauthRole",
+      "StackName": "amplify-chessfront-dev-140919",
+      "StackId": "arn:aws:cloudformation:us-east-1:897067570351:stack/amplify-chessfront-dev-140919/e7333580-15de-11ee-8c46-0a30b5115683",
+      "AmplifyAppId": "dl09q2j4wgyl5"
+    },
+    "categories": {
+      "api": {
+        "chessfront": {}
+      },
+      "auth": {
+        "chessfrontcfa1ec45": {}
+      }
+    }
+  }
+}

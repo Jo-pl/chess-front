@@ -1,3 +1,4 @@
+@import '~@aws-amplify/ui-angular/theme.css';
 :root{
   --clr-void: #0E0B16;
   --clr-purple: hsl(283, 58%, 51%);

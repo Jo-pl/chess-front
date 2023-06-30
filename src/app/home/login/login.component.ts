@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   formBuilder:FormBuilder;
   loginRegisterForm:any;
   userEmail:string='';
+  buttonText:string='login';
 
   constructor(private r: Router, private auth:AuthService, formBuilder: FormBuilder,) {
     this.router = r;

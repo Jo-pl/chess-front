@@ -15,6 +15,9 @@ import { LoginComponent } from './home/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormButtonComponent } from './shared/form-button/form-button.component';
+import { FormInputComponent } from './shared/form-input/form-input.component';
+import { RoundedIconComponent } from './shared/rounded-icon/rounded-icon.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HistoryComponent,
     MainButtonComponent,
     PlayerInfoComponent,
-    LoginComponent
+    LoginComponent,
+    FormButtonComponent,
+    FormInputComponent,
+    RoundedIconComponent
   ],
   imports: [
     BrowserModule,

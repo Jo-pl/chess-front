@@ -1,5 +1,4 @@
 <div class="main">
-    <!--<img class="bg" src="../../../assets/background-login.svg">-->
     <div class="right">  
             <div class="login-container">
             <div class="top-user-container">
@@ -9,13 +8,13 @@
                 <span>Login</span>
             </div>            
             <div class="links-container">
-                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
-                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
-                <a href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
             </div>
-            <span class="pos-rel"><i class="fa-solid fa-user fa-xl"></i><input type="email" name="" id="email" placeholder="Email"></span>
-            <span class="pos-rel"><i class="fa-solid fa-user fa-xl"></i><input type="password" name="" id="password" placeholder="Password"></span>
-            <button type="submit">Submit</button>
+            <app-form-input [placeholder]="'Email'" [icon]="'fa-solid fa-user fa-xl'"></app-form-input>
+            <app-form-input [placeholder]="'Password'" [icon]="'fa-solid fa-lock fa-xl'"></app-form-input>
+            <app-form-button [text]="buttonText"></app-form-button>
         </div>
     </div>
 <div>

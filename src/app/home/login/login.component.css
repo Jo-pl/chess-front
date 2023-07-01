@@ -75,3 +75,33 @@
     height:1000px;
     width:1000px;
 }
+
+.sm-text{
+    font-size: 0.5em;
+}
+
+.sm-text a{
+    color:blue;
+    text-decoration: underline;
+}
+
+.sm-text a:hover{
+    cursor: pointer;
+}
+
+.loading-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:400px;
+}
+
+@media only screen and (max-width: 1350px) {
+    .right{
+        justify-content: center;
+    }
+
+    .main{
+        background-image: none;
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-input',
@@ -8,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FormInputComponent implements OnInit {
   @Input() placeholder!: string;
   @Input() icon!: string;
+  @Input() form!: FormGroup;
   constructor() { }
 
   ngOnInit(): void {

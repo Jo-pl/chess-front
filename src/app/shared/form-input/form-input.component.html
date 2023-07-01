@@ -1,4 +1,4 @@
-<span class="pos-rel">
+<span class="pos-rel" [formGroup]="form">
     <i class="{{icon}}"></i>
-    <input type="email" name="" id="email" placeholder="{{placeholder}}">
+    <input type="{{placeholder.toLowerCase()}}" name="{{placeholder.toLowerCase()}}" id="{{placeholder}}" placeholder="{{placeholder}}" formControlName="{{placeholder.toLowerCase()}}" autoComplete="on"> 
 </span>

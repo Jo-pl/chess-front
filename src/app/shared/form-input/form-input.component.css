@@ -29,3 +29,9 @@ input{
 input::placeholder{
     color:#1d2e3a;
 }
+
+input:focus{
+    border:none;
+    outline:none;
+    /*TODO effect on focus */
+}

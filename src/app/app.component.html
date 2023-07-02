@@ -3,3 +3,5 @@
 <router-outlet></router-outlet>
 
 <app-footer *ngIf="this.router.url != '/register' && this.router.url != '/login'"></app-footer>
+
+<div>{{alertService.message()}}</div>

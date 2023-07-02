@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormButtonComponent } from './shared/form-button/form-button.component';
 import { FormInputComponent } from './shared/form-input/form-input.component';
 import { RoundedIconComponent } from './shared/rounded-icon/rounded-icon.component';
+import { ChessViewerComponent } from './chess-viewer/chess-viewer.component';
+import * as $ from "jquery";
 
 @NgModule({
   declarations: [
@@ -33,8 +35,12 @@ import { RoundedIconComponent } from './shared/rounded-icon/rounded-icon.compone
     LoginComponent,
     FormButtonComponent,
     FormInputComponent,
-    RoundedIconComponent
+    RoundedIconComponent,
+    ChessViewerComponent,
+    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

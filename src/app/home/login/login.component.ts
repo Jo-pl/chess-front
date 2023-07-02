@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Auth } from 'aws-amplify';
 import { AuthService } from 'src/app/services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from '../../services/alert.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,19 +14,24 @@ export class LoginComponent implements OnInit {
   authService:AuthService;
   formBuilder:FormBuilder;
   loginRegisterForm:FormGroup;
+  confirmForm:FormGroup;
   userEmail:string = '';
   formType:string = 'login';
   loading:boolean = false;
   errorMessage:string|null = null;
   errorsActivated:boolean = false;
+  alertService:AlertService;
 
-  constructor(private r: Router, private auth:AuthService, formBuilder: FormBuilder,) {
+  constructor(private r: Router, private auth:AuthService, formBuilder: FormBuilder, alertService:AlertService) {
+    this.alertService = alertService;
     this.router = r;
     this.authService = auth;
     this.formBuilder = formBuilder;
     this.loginRegisterForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['',[Validators.required,Validators.minLength(6),Validators.maxLength(30)]],
+    });
+    this.confirmForm = this.formBuilder.group({
       code: ['',[Validators.required]]
     });
   }
@@ -34,21 +40,28 @@ export class LoginComponent implements OnInit {
     return this.loginRegisterForm.controls;
   }
 
+  f2(){
+    return this.confirmForm.controls;
+  }
+
   ngOnInit(): void {
-    
+    setInterval(()=> { 
+      console.log(this.f());
+     }, 1000);
   }
 
   handleSubmit = async()=>{
+    console.log(this.loginRegisterForm);
     if (this.loginRegisterForm.invalid) {
       this.errorsActivated = true;
       return;
     }
+    console.log('after handlesubmit')
     
     if(this.formType == 'login'){
       await this.signIn();
     }else if(this.formType == 'register'){
       await this.signUp();
-      this.formType='confirm';
     }else{
       await this.verifyEmailValidationCode();
     }
@@ -61,12 +74,14 @@ export class LoginComponent implements OnInit {
     res.then((val)=>{
       if(val){
         if(val[1] == 'error'){
-          this.errorMessage = 'This code is either incorrect or expired, please try again';
+          this.errorMessage = 'This account already exists';
+        }else{
+          this.userEmail = this.loginRegisterForm.value['email'];
+          this.formType='confirm';
         }
       }
       this.loading = false;
     });
-    this.userEmail = this.loginRegisterForm.value['email'];
   }
 
   signIn = async()=>{
@@ -77,21 +92,26 @@ export class LoginComponent implements OnInit {
       if(val){
         if(val[1] == 'error'){
           this.errorMessage = 'Incorrect user or password, please try again';
+        }else{
+          this.alertService.messageSuccess = "Signed in with success";
+          this.router.navigate(['/']);
         }
       }
       this.loading = false;
-      //this.router.navigate(['/']);
+      //
     });
   }
 
   verifyEmailValidationCode = async()=>{
     this.errorMessage = '';
-    let res = this.authService.verifyEmailValidationCode(this.userEmail,this.loginRegisterForm.value['code']);
+    let res = this.authService.verifyEmailValidationCode(this.userEmail,this.confirmForm.value['code']);
     this.loading = true;
     res.then((val)=>{
       if(val){
         if(val[1] == 'error'){
           this.errorMessage = 'This code is either incorrect or expired, please try again';
+        }else{
+          this.router.navigate(['/']);
         }
       }
       this.loading = false;

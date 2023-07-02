@@ -10,9 +10,11 @@ export class FormInputComponent implements OnInit {
   @Input() placeholder!: string;
   @Input() icon!: string;
   @Input() form!: FormGroup;
-  constructor() { }
+  @Input() error!: boolean;
+  constructor() {
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
 }

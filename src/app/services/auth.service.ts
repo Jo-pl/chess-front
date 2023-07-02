@@ -28,10 +28,12 @@ export class AuthService {
         error,
         'error'
       ]);
+      console.log(res);
       return res;
   }
 
   async signIn(email:any,password:any) {
+    console.log('in signin')
     let res;
     await Auth.signIn(email, password)
     .then(response => res = [
@@ -42,6 +44,7 @@ export class AuthService {
       error,
       'error'
     ]);
+    console.log(res);
     return res;
   }
 

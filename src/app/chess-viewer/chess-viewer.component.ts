@@ -21,8 +21,8 @@ export class ChessViewerComponent implements OnInit {
     //console.log(model);
     console.log(value); 
     const orbitCycle = [
-      '45deg 55deg 5m',
-      '-60deg 110deg 5m',
+      '45deg 55deg 20m',
+      '-60deg 110deg 20m',
       model.prop('cameraOrbit')
     ];
     setInterval(() => {

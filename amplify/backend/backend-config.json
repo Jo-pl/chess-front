@@ -1,26 +1,6 @@
 {
-  "api": {
-    "chessfront": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDate": "2024-06-27T19:01:14.438Z",
-              "apiKeyExpirationDays": 365,
-              "description": "api-key"
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    }
-  },
   "auth": {
-    "chessfrontcfa1ec45": {
+    "chessfront5ca732da": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {

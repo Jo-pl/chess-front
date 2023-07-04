@@ -1,20 +1,54 @@
-
-<main>
-    <div class="page-container">
-        <h1 *ngIf="this.router.url == '/login'">Login</h1>
-        <h1 *ngIf="this.router.url == '/register'">Register</h1>
-        <section class="login-section">
-            <form [formGroup]="loginRegisterForm" class="login-container" method="post" (ngSubmit)="this.router.url == '/register'?signUp():signIn()">
-                <label>Email:</label>
-                <input type="email" formControlName="email" id="email" autocomplete="on" required>
-                <label>Password:</label>
-                <input type="password" formControlName="password" id="password" autocomplete="on" required>
-                <label>Code:</label>
-                <input type="text" formControlName="code" id="code" autocomplete="on" required>
-                <app-main-button [text]="'Submit'"></app-main-button>
-            </form>
-        </section>
-        <button (click)="verifyEmailValidationCode()">aaa</button>
-        <h2 *ngIf="this.router.url == '/login'">Don't have an account yet? <a href="/register">Consider creating one</a></h2>        
+<div class="main">
+    <div class="right">
+        <form *ngIf="!loading" [formGroup]="loginRegisterForm" class="login-container" method="post" (ngSubmit)="handleSubmit()">
+            <div class="top-user-container">
+                <div class="user-container">
+                    <img class="user-icon" src="../../../assets/user-logo.svg" alt="user-icon"/>                    
+                </div>
+                <h1 *ngIf="formType=='login'">Login</h1>
+                <h1 *ngIf="formType=='register'">Register</h1>
+                <span *ngIf="formType=='confirm'" class="sm-text">We sent a code to your email, please enter it below</span>
+            </div>            
+            <div class="links-container">
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+            </div>
+                <app-form-input *ngIf="formType!='confirm'" [placeholder]="'Email'" [icon]="'fa-solid fa-user fa-xl'" [form]="loginRegisterForm" [error]="(f()['email']['errors'] != null && errorsActivated)"></app-form-input>
+                    <div *ngIf="(f()['email']['errors']?.['required'] && !f()['password']['errors']?.['required']) && errorsActivated">
+                        <span class="text-error">An email is required</span>
+                    </div>
+                    <div *ngIf="(f()['email']['errors']?.['email']) && errorsActivated">
+                        <span class="text-error">The email format is incorrect</span>
+                    </div>
+                <app-form-input *ngIf="formType!='confirm'" [placeholder]="'Password'" [icon]="'fa-solid fa-lock fa-xl'" [form]="loginRegisterForm" [error]="(f()['password']['errors'] != null && errorsActivated) "></app-form-input>
+                    <div *ngIf="(!f()['email']['errors']?.['required'] && f()['password']['errors']?.['required']) && errorsActivated">
+                        <span class="text-error">A password is required</span>
+                    </div>
+                    <div *ngIf="(f()['password']['errors']?.['minlength']) && errorsActivated">
+                        <span class="text-error">The password must have at least 6 characters</span>
+                    </div>
+                    <div *ngIf="(f()['password']['errors']?.['maxlength']) && errorsActivated">
+                        <span class="text-error">The password must have less than 30 characters</span>
+                    </div>
+                    <div *ngIf="(f()['password']['value'] == f()['email']['value'] && !f()['password']['errors']?.['required']) && errorsActivated">
+                        <span class="text-error">Your password can't be the same as your email</span>
+                    </div>
+                    <div *ngIf="(f()['email']['errors']?.['required'] && f()['password']['errors']?.['required']) && errorsActivated">
+                        <span class="text-error">An email and password are required</span>
+                    </div>  
+                <app-form-input *ngIf="formType=='confirm'" [placeholder]="'code'" [icon]="'fa-solid fa-lock fa-xl'" [form]="confirmForm" [error]="(f2()['code']['errors'] != null && errorsActivated) "></app-form-input>   
+                <div *ngIf="(f2()['code']['errors']?.['required'] && errorsActivated)">
+                    <span class="text-error">Please enter your code above</span>
+                </div>
+                <div *ngIf="errorMessage">
+                    <span class="text-error">{{errorMessage}}</span>
+                </div>
+                <app-form-button [text]="formType" class="justify-self-center"></app-form-button>
+                <span *ngIf="formType=='login'" class="sm-text">Don't have an account yet? <a (click)="this.formType = 'register'">Consider creating one</a></span>
+        </form>
+        <div *ngIf="loading" class="login-container">
+            <img *ngIf="loading" src="../../../assets/loading-gif.gif" width="200px" height="200px" class="loading-icon">
+        </div>
     </div>
-<main>
+<div>

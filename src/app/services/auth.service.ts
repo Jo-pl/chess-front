@@ -9,8 +9,8 @@ export class AuthService {
   constructor() { }
 
   async signUp(email:any,password:any) {
-    try {
-      const { user } = await Auth.signUp({
+    let res;
+    await Auth.signUp({
         username: email,
         password: password,
         attributes: {
@@ -19,29 +19,47 @@ export class AuthService {
         autoSignIn: { // optional - enables auto sign in after user is confirmed
           enabled: true,
         }
-      });
-      console.log(user);
-    } catch (error) {
-      console.log('error signing up:', error);
-    }
+      })
+      .then(response => res = [
+        response,
+        'success'
+      ])
+      .catch(error => res = [
+        error,
+        'error'
+      ]);
+      console.log(res);
+      return res;
   }
 
   async signIn(email:any,password:any) {
-    try {
-      const user = await Auth.signIn(email, password);
-    } catch (error) {
-      console.log('error signing in', error);
-    }
+    console.log('in signin')
+    let res;
+    await Auth.signIn(email, password)
+    .then(response => res = [
+      response,
+      'success'
+    ])
+    .catch(error => res = [
+      error,
+      'error'
+    ]);
+    console.log(res);
+    return res;
   }
 
   async verifyEmailValidationCode(email:string,code:string) {
+    let res;
     Auth.confirmSignUp(email,code)
-      .then(() => {
-        console.log('email verified');
-    })
-      .catch((e) => {
-        console.log('failed with error', e);
-    });
+    .then(response => res = [
+      response,
+      'success'
+    ])
+    .catch(error => res = [
+      error,
+      'error'
+    ]);
+    return res;
   }
 
 }

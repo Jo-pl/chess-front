@@ -34,9 +34,15 @@
                     <div *ngIf="(f()['password']['value'] == f()['email']['value'] && !f()['password']['errors']?.['required']) && errorsActivated">
                         <span class="text-error">Your password can't be the same as your email</span>
                     </div>
-                <app-form-input *ngIf="formType=='confirm'" [placeholder]="'Code'" [icon]="'fa-solid fa-lock fa-xl'" [form]="confirmForm" [error]="(f2()['code']['errors'] != null && errorsActivated) "></app-form-input>   
-                <div *ngIf="(f()['email']['errors']?.['required'] && f()['password']['errors']?.['required']) && errorsActivated">
-                    <span class="text-error">An email and password are required</span>
+                    <div *ngIf="(f()['email']['errors']?.['required'] && f()['password']['errors']?.['required']) && errorsActivated">
+                        <span class="text-error">An email and password are required</span>
+                    </div>  
+                <app-form-input *ngIf="formType=='confirm'" [placeholder]="'code'" [icon]="'fa-solid fa-lock fa-xl'" [form]="confirmForm" [error]="(f2()['code']['errors'] != null && errorsActivated) "></app-form-input>   
+                <div *ngIf="(f2()['code']['errors']?.['required'] && errorsActivated)">
+                    <span class="text-error">Please enter your code above</span>
+                </div>
+                <div *ngIf="errorMessage">
+                    <span class="text-error">{{errorMessage}}</span>
                 </div>
                 <app-form-button [text]="formType" class="justify-self-center"></app-form-button>
                 <span *ngIf="formType=='login'" class="sm-text">Don't have an account yet? <a (click)="this.formType = 'register'">Consider creating one</a></span>

@@ -45,9 +45,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(()=> { 
-      console.log(this.f());
-     }, 1000);
   }
 
   handleSubmit = async()=>{
@@ -63,6 +60,11 @@ export class LoginComponent implements OnInit {
     }else if(this.formType == 'register'){
       await this.signUp();
     }else{
+      if(this.confirmForm.invalid){
+        this.errorsActivated = true;
+        console.log('hey');
+        return;
+      }
       await this.verifyEmailValidationCode();
     }
   }
@@ -75,6 +77,7 @@ export class LoginComponent implements OnInit {
       if(val){
         if(val[1] == 'error'){
           this.errorMessage = 'This account already exists';
+          this.errorsActivated = false;
         }else{
           this.userEmail = this.loginRegisterForm.value['email'];
           this.formType='confirm';
@@ -92,13 +95,13 @@ export class LoginComponent implements OnInit {
       if(val){
         if(val[1] == 'error'){
           this.errorMessage = 'Incorrect user or password, please try again';
+          this.errorsActivated = false;
         }else{
           this.alertService.messageSuccess = "Signed in with success";
           this.router.navigate(['/']);
         }
       }
       this.loading = false;
-      //
     });
   }
 
@@ -107,12 +110,17 @@ export class LoginComponent implements OnInit {
     let res = this.authService.verifyEmailValidationCode(this.userEmail,this.confirmForm.value['code']);
     this.loading = true;
     res.then((val)=>{
+      console.log(val);
       if(val){
         if(val[1] == 'error'){
           this.errorMessage = 'This code is either incorrect or expired, please try again';
+          this.errorsActivated = false;
         }else{
           this.router.navigate(['/']);
         }
+      }else{
+        this.errorMessage = 'This code is either incorrect or expired, please try again';
+          this.errorsActivated = false;
       }
       this.loading = false;
     });

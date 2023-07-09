@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit {
         }else{
           this.userEmail = this.loginRegisterForm.value['email'];
           this.formType='confirm';
+          this.errorsActivated = false;
         }
       }
       this.loading = false;
@@ -107,6 +108,7 @@ export class LoginComponent implements OnInit {
 
   verifyEmailValidationCode = async()=>{
     this.errorMessage = '';
+    console.log(this.userEmail,this.confirmForm.value['code']);
     let res = this.authService.verifyEmailValidationCode(this.userEmail,this.confirmForm.value['code']);
     this.loading = true;
     res.then((val)=>{
@@ -119,8 +121,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         }
       }else{
-        this.errorMessage = 'This code is either incorrect or expired, please try again';
-          this.errorsActivated = false;
+        this.router.navigate(['/']);
       }
       this.loading = false;
     });

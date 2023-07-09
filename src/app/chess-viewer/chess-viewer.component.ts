@@ -12,7 +12,6 @@ export class ChessViewerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   
   }
 
   ngAfterViewInit(){

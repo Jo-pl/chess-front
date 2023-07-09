@@ -10,9 +10,9 @@
                 <span *ngIf="formType=='confirm'" class="sm-text">We sent a code to your email, please enter it below</span>
             </div>            
             <div class="links-container">
-                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
-                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
-                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-brands fa-discord fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-brands fa-github fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-brands fa-instagram fa-xl'"></app-rounded-icon>
             </div>
                 <app-form-input *ngIf="formType!='confirm'" [placeholder]="'Email'" [icon]="'fa-solid fa-user fa-xl'" [form]="loginRegisterForm" [error]="(f()['email']['errors'] != null && errorsActivated)"></app-form-input>
                     <div *ngIf="(f()['email']['errors']?.['required'] && !f()['password']['errors']?.['required']) && errorsActivated">
@@ -38,7 +38,7 @@
                         <span class="text-error">An email and password are required</span>
                     </div>  
                 <app-form-input *ngIf="formType=='confirm'" [placeholder]="'code'" [icon]="'fa-solid fa-lock fa-xl'" [form]="confirmForm" [error]="(f2()['code']['errors'] != null && errorsActivated) "></app-form-input>   
-                <div *ngIf="(f2()['code']['errors']?.['required'] && errorsActivated)">
+                <div *ngIf="(f2()['code']['errors']?.['required'] && errorsActivated && formType == 'confirm')">
                     <span class="text-error">Please enter your code above</span>
                 </div>
                 <div *ngIf="errorMessage">

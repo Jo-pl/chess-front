@@ -7,7 +7,7 @@
                 </div>
                 <h1 *ngIf="formType=='login'">Login</h1>
                 <h1 *ngIf="formType=='register'">Register</h1>
-                <span *ngIf="formType=='confirm'" class="sm-text">We sent a code to your email, please enter it below</span>
+                <div *ngIf="formType=='confirm'" class="sm-text">We sent a code to your email, please enter it below</div>
             </div>            
             <div class="links-container">
                 <app-rounded-icon [icon]="'fa-brands fa-discord fa-xl'"></app-rounded-icon>
@@ -26,7 +26,7 @@
                         <span class="text-error">A password is required</span>
                     </div>
                     <div *ngIf="(f()['password']['errors']?.['minlength']) && errorsActivated">
-                        <span class="text-error">The password must have at least 6 characters</span>
+                        <span class="text-error">The password must have at least 8 characters</span>
                     </div>
                     <div *ngIf="(f()['password']['errors']?.['maxlength']) && errorsActivated">
                         <span class="text-error">The password must have less than 30 characters</span>

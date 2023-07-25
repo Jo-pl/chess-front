@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Auth } from 'aws-amplify';
-
+import { CognitoUser } from '@aws-amplify/auth'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
-  cognitoUser:Object|null;
+  cognitoUser:CognitoUser|null;
   
   constructor() {this.cognitoUser = null; }
+
+  async getUser(){
+    let user = await Auth.currentAuthenticatedUser()
+    return user;
+  }
 
   async signUp(email:any,password:any) {
     let res;

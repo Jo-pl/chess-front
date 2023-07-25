@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,13 @@ import { MainButtonComponent } from './shared/main-button/main-button.component'
 import { PlayerInfoComponent } from './shared/player-info/player-info.component';
 import { LoginComponent } from './home/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormButtonComponent } from './shared/form-button/form-button.component';
+import { FormInputComponent } from './shared/form-input/form-input.component';
+import { RoundedIconComponent } from './shared/rounded-icon/rounded-icon.component';
+import { ChessViewerComponent } from './chess-viewer/chess-viewer.component';
+import * as $ from "jquery";
 
 @NgModule({
   declarations: [
@@ -25,12 +32,22 @@ import { HttpClientModule } from '@angular/common/http';
     HistoryComponent,
     MainButtonComponent,
     PlayerInfoComponent,
-    LoginComponent
+    LoginComponent,
+    FormButtonComponent,
+    FormInputComponent,
+    RoundedIconComponent,
+    ChessViewerComponent,
+    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AmplifyAuthenticatorModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

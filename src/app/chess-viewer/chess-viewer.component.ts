@@ -17,8 +17,6 @@ export class ChessViewerComponent implements OnInit {
   ngAfterViewInit(){
     let model = $('#orbit-demo');
     let value = model.prop('cameraOrbit');
-    console.log(model);
-    console.log(value); 
     const orbitCycle = [
       '45deg 55deg 20m',
       '-60deg 110deg 20m',
@@ -26,7 +24,6 @@ export class ChessViewerComponent implements OnInit {
     ];
     setInterval(() => {
       const currentOrbitIndex = orbitCycle.indexOf(model.prop('cameraOrbit'));
-      console.log(model);
       model.prop('cameraOrbit',orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length])
     }, 6000);
   }

@@ -44,7 +44,6 @@ export class BoardComponent implements OnInit {
     this.historyService.historyList.push(this.selectedSquare + "-" + sq);
     this.selectedSquare = undefined;
     }catch(ex){
-      console.log(ex);
       this.selectedSquare = undefined;
     }
   }

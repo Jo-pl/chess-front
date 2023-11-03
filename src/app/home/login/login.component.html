@@ -11,8 +11,8 @@
             </div>            
             <div class="links-container">
                 <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
-                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
-                <app-rounded-icon [icon]="'fa-solid fa-user fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-gear fa-xl'"></app-rounded-icon>
+                <app-rounded-icon [icon]="'fa-solid fa-info fa-xl'"></app-rounded-icon>
             </div>
                 <app-form-input *ngIf="formType!='confirm'" [placeholder]="'Email'" [icon]="'fa-solid fa-user fa-xl'" [form]="loginRegisterForm" [error]="(f()['email']['errors'] != null && errorsActivated)"></app-form-input>
                     <div *ngIf="(f()['email']['errors']?.['required'] && !f()['password']['errors']?.['required']) && errorsActivated">

@@ -32,11 +32,6 @@
     width:100%;
 }
 
-.square-purple{
-    border:1px solid var(--clr-gray);
-    background-color:var(--clr-soft-purple);
-}
-
-.square-white{
-    border:1px solid var(--clr-gray);
+.dark-square{
+    background-color:var(--clr-text);
 }

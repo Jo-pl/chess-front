@@ -3,7 +3,7 @@
         <app-square *ngFor="let cell of col;let index2 = index" 
         [chessObject]="cell"
         [square]="(rowAss[index2]+colAss[7-index1])"
-        [ngClass]="isColored(index1*8+index2)?'square square-purple':' square square-white'" 
+        [ngClass]="isColored(index1*8+index2)?'square light-square':' square dark-square'" 
         [isSelected]="selectedSquare == rowAss[index2]+colAss[7-index1]"
         (click)="selectSquare(rowAss[index2]+colAss[7-index1])">
         </app-square>

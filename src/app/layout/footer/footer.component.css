@@ -5,7 +5,7 @@ footer{
     row-gap: 40px;
     height:245px;
     width:90%;
-    border-top:1px solid var(--clr-gray);
+    border-top:1px solid var(--clr-text);
     height: 225px;
     padding-top:20px;
     margin-bottom:10px;

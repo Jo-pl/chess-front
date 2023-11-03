@@ -30,7 +30,10 @@ export class SquareComponent implements OnInit {
       res += ('fa-solid fa-2xl fa-chess-'+this.pieceMap.get(this.chessObject.type)+' ');
     }
     if(this.chessObject?.color == 'b'){
-      res+='black-player ';
+      res+='dark-player ';
+    }
+    if(this.chessObject?.color != 'b'){
+      res+='light-player ';
     }
     if(this.isSelected){
       res+='selected';

@@ -9,7 +9,7 @@ h1{
     width:100%;
     justify-content: flex-start;
     flex-direction: column;
-    border:2px solid var(--clr-purple);
+    border:2px solid var(--clr-history);
     border-radius: 12px;
     padding:10px;
     height:500px;
@@ -34,7 +34,7 @@ ul{
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0 50px 50px 0px;
     border-radius: 0 50px 50px 0px;
-    background: var(--clr-purple); 
+    background: var(--clr-history); 
 }
 
 @media only screen and (max-width: 1200px) {

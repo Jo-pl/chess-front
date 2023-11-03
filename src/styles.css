@@ -1,10 +1,13 @@
 @import '~@aws-amplify/ui-angular/theme.css';
 :root{
-  --clr-void: #0E0B16;
-  --clr-purple: hsl(283, 58%, 51%);
-  --clr-soft-purple:hsla(283, 58%, 51%,0.4);
-  --clr-blue:#4717f6;
-  --clr-gray:#E7DFDD;
+  --clr-bg:#E1E6EC;
+  --clr-text:#1d2e3a;
+  --clr-light-tile:#E1E6EC;
+  --clr-dark-tile:#1d2e3a;
+  --clr-light-piece:#A239CA;
+  --clr-dark-piece:#5C768A;
+  --clr-links:red;
+  --clr-history:#A239CA;
   --ff-main:'Khand', sans-serif;
 }
 
@@ -45,8 +48,8 @@ body {
   font-family: var(--ff-main);
   font-weight: 400;
   font-size: 1em;
-  color:var(--clr-gray);
-  background-color: var(--clr-void);
+  color:var(--clr-text);
+  background-color: var(--clr-bg);
 }
 
 section{
@@ -71,7 +74,6 @@ svg {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {

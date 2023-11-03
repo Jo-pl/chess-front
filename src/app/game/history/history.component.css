@@ -1,6 +1,15 @@
 h1{
-    text-decoration: underline;
-    font-size: 2em;
+    font-size: 36pt;
+    font-weight: 700;
+    margin-left:10px;
+}
+
+.li-dark{
+    color:var(--clr-dark-piece);
+}
+
+.li-light{
+    color:var(--clr-light-piece);
 }
 
 .history-container{
@@ -9,12 +18,14 @@ h1{
     width:100%;
     justify-content: flex-start;
     flex-direction: column;
-    border:2px solid var(--clr-history);
-    border-radius: 12px;
-    padding:10px;
+    padding:20px;
     height:500px;
     overflow-y: scroll;
     overflow-x: hidden;
+    box-shadow: inset -7px -7px 7px var(--clr-light-shadow),
+                inset 7px 7px 7px var(--clr-dark-shadow);
+    border-radius:40px;
+    font-weight: 700;
 }
 
 ul{

@@ -8,7 +8,11 @@
   --clr-dark-piece:#5C768A;
   --clr-links:red;
   --clr-history:#A239CA;
-  --ff-main:'Khand', sans-serif;
+  --clr-light-shadow:rgba(255,255,255,0.8);
+  --clr-dark-shadow:rgba(0,0,0,0.3);
+  --clr-button-active:#1d2e3a;
+  --clr-button:#E1E6EC;
+  --ff-main:'Dubai', sans-serif;
 }
 
 /* Box sizing rules */

@@ -10,7 +10,7 @@ import { BoardComponent } from './game/board/board.component';
 import { SquareComponent } from './game/square/square.component';
 import { HistoryComponent } from './game/history/history.component';
 import { MainButtonComponent } from './shared/main-button/main-button.component';
-import { PlayerInfoComponent } from './shared/player-info/player-info.component';
+import { ComputerInfoComponent } from './shared/computer-info/computer-info.component';
 import { LoginComponent } from './home/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
@@ -20,6 +20,7 @@ import { FormInputComponent } from './shared/form-input/form-input.component';
 import { RoundedIconComponent } from './shared/rounded-icon/rounded-icon.component';
 import { ChessViewerComponent } from './chess-viewer/chess-viewer.component';
 import * as $ from "jquery";
+import { ToggleButtonComponent } from './shared/toggle-button/toggle-button.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,13 @@ import * as $ from "jquery";
     SquareComponent,
     HistoryComponent,
     MainButtonComponent,
-    PlayerInfoComponent,
+    ComputerInfoComponent,
     LoginComponent,
     FormButtonComponent,
     FormInputComponent,
     RoundedIconComponent,
     ChessViewerComponent,
+    ToggleButtonComponent,
     
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

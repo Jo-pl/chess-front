@@ -41,7 +41,7 @@ export class BoardComponent implements OnInit {
     //Try a move 
     try{
     let res = this.chess.move({ from: this.selectedSquare, to: sq, promotion: 'q' });
-    this.historyService.historyList.push(this.selectedSquare + "-" + sq);
+    this.historyService.historyList.push(this.selectedSquare.toUpperCase() + "-" + sq.toUpperCase());
     this.selectedSquare = undefined;
     }catch(ex){
       console.log(ex);

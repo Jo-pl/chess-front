@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayerInfoComponent } from './player-info.component';
+import { ToggleButtonComponent } from './toggle-button.component';
 
-describe('PlayerInfoComponent', () => {
-  let component: PlayerInfoComponent;
-  let fixture: ComponentFixture<PlayerInfoComponent>;
+describe('ToggleButtonComponent', () => {
+  let component: ToggleButtonComponent;
+  let fixture: ComponentFixture<ToggleButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayerInfoComponent ]
+      declarations: [ ToggleButtonComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PlayerInfoComponent);
+    fixture = TestBed.createComponent(ToggleButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

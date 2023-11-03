@@ -1,8 +1,8 @@
+<h1>History</h1>
 <div class="history-container">
-    <h1>History</h1>
     <ul>
-        <li *ngFor="let move of historyList">
-            {{move}}
+        <li *ngFor="let move of historyList;let index = index" [ngClass]="index%2==1?' li-dark':' li-light'">
+        {{move}}
         </li>
     </ul>
 </div>

@@ -1,11 +1,21 @@
-<div class="board-grid">
-    <div class="board-col" *ngFor="let col of chess.board();let index1 = index">
-        <app-square *ngFor="let cell of col;let index2 = index" 
-        [chessObject]="cell"
-        [square]="(rowAss[index2]+colAss[7-index1])"
-        [ngClass]="isColored(index1*8+index2)?'square light-square':' square dark-square'" 
-        [isSelected]="selectedSquare == rowAss[index2]+colAss[7-index1]"
-        (click)="selectSquare(rowAss[index2]+colAss[7-index1])">
-        </app-square>
-    </div>
+  <div class="board-grid">
+        <div class="board-row" *ngFor="let col of chess.board();let index1 = index">
+            <app-square *ngFor="let cell of col;let index2 = index" 
+            [chessObject]="cell"
+            [square]="(rowAss[index2]+colAss[7-index1])"
+            [ngClass]="getColor(index1*8+index2) + ((selectedSquare == rowAss[index2]+colAss[7-index1])?' selected-square':'')" 
+            [isSelected]="selectedSquare == rowAss[index2]+colAss[7-index1]"
+            (click)="selectSquare(rowAss[index2]+colAss[7-index1])">
+            </app-square>
+        </div>
+        <div class="board-row">
+            <div class="letter">A</div>
+            <div class="letter">B</div>
+            <div class="letter">C</div>
+            <div class="letter">D</div>
+            <div class="letter">E</div>
+            <div class="letter">F</div>
+            <div class="letter">G</div>
+            <div class="letter">H</div>
+        </div>
 </div>

@@ -5,9 +5,12 @@
   --clr-light-tile:#E1E6EC;
   --clr-dark-tile:#1d2e3a;
   --clr-light-piece:#A239CA;
+  --clr-weird-square-light-selected:#A239CA;
+  --clr-weird-square-dark-selected:#92A3B1;
+  --clr-selected-tile:#E4C6F0;
   --clr-dark-piece:#5C768A;
   --clr-links:red;
-  --clr-history:#A239CA;
+  --clr-history:#E1E6EC;
   --clr-light-shadow:rgba(255,255,255,0.8);
   --clr-dark-shadow:rgba(0,0,0,0.3);
   --clr-button-active:#1d2e3a;

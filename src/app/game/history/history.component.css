@@ -18,34 +18,48 @@ h1{
     width:100%;
     justify-content: flex-start;
     flex-direction: column;
-    padding:20px;
+    align-items: center;
+    justify-content: flex-start;
     height:500px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     box-shadow: inset -7px -7px 7px var(--clr-light-shadow),
                 inset 7px 7px 7px var(--clr-dark-shadow);
     border-radius:40px;
     font-weight: 700;
+    padding-top:10px;
 }
 
 ul{
+    padding:20px;
     list-style-type: none;
     font-size: 1.5em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:90%;
+    width:100%;
 }
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 30px;
 }
  
 ::-webkit-scrollbar-track {
-    display:none;
+    /*display:none;*/
+    display: block;
+    box-shadow:-1px -1px 3px var(--clr-light-shadow),
+                1px 1px 3px var(--clr-dark-shadow);
+    max-height:200px;
+                
 }
 
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0 50px 50px 0px;
     border-radius: 0 50px 50px 0px;
-    background: var(--clr-history); 
+    background: var(--clr-history);
+    /*background: black;*/
+    box-shadow:-1px -1px 3px var(--clr-light-shadow),
+                1px 1px 3px var(--clr-dark-shadow);
+
 }
 
 @media only screen and (max-width: 1200px) {

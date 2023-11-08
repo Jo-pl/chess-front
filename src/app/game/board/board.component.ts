@@ -14,17 +14,45 @@ export class BoardComponent implements OnInit {
   colAss:number[] = [1,2,3,4,5,6,7,8];
   chess = new Chess();
   historyService:HistoryService;
+  topLight:number[] =  [2,4,6];
+  leftLight:number[] = [16,32,48];
+  topLeft:number = 0;
+
+  insertMock(){
+    for(let i=0;i<20;i++){
+      this.historyService.historyList.push("ok");
+    }
+    
+  }
 
   constructor(historyService:HistoryService) {
     this.historyService = historyService;
+    this.insertMock();
   }
 
   ngOnInit(): void {
   }
 
-  isColored(index: number): boolean {
-    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
+  getColor(index:number):string{
+    let pog =  (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
+    let className = "square ";
+    //Special cases
+    if(index == this.topLeft){
+      return className+"top-left";
+    }
+    if(this.topLight.includes(index)){
+      return className+"top-light";
+    }
+    if(this.leftLight.includes(index)){
+      return className+"left-light";
+    }
+    
+    return pog?className+"light-square":className+"dark-square";
   }
+
+  /*isColored(index: number): boolean {
+    return (Math.floor(index / 8) % 2 === 0 && index % 2 === 0) || (Math.floor(index / 8) % 2 === 1 && index % 2 === 1);
+  }*/
 
   selectSquare(sq:string){
     let found = false;

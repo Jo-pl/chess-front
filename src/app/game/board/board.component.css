@@ -1,3 +1,10 @@
+.container-board{
+    display:flex;
+    flex-direction: col;
+    align-items: center;
+    justify-content: center;
+}
+
 .board-grid{
     display:grid;
     align-items: center;
@@ -6,7 +13,20 @@
     grid-auto-rows: 100px;
 }
 
-.board-col{
+.letter{
+    height: 100%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number{
+    height:100%;
+    width:100%;
+}
+
+.board-row{
     display: contents;
 }
 
@@ -16,7 +36,7 @@
         grid-template-rows: repeat(8, 75px);
     }
 }
-
+/*TODO CHANGE BOX SHADOWS*/
 @media only screen and (max-width: 1200px) {
     .board-grid{
         grid-template-columns: repeat(8, 45px);
@@ -30,8 +50,73 @@
     justify-content: center;
     height:100%;
     width:100%;
+    border-radius: 13px;/*0.75VWish*/
+    position:relative;
 }
 
 .dark-square{
-    background-color:var(--clr-text);
+    background-color:var(--clr-dark-tile);
+    box-shadow: inset 4pt 4pt 5pt var(--clr-dark-shadow),
+                inset -2pt -2pt 2pt rgba(255,255,255,0.2);
+}
+
+.dark-square.selected-square{
+    background-color: var(--clr-selected-tile);
+    box-shadow: 0 0 20pt 2pt var(--clr-selected-tile),
+                0 0 2pt 2pt rgb(255,255,255,0.5) !important;
+    z-index: 10;
+}
+
+.dark-square.selected-square:after{
+    content:'';
+    position:absolute;
+    width:80%;
+    height:80%;
+    border:2pt solid var(--clr-weird-square-light-selected);
+    border-radius: 10%;
+}
+
+.light-square{
+    background-color:var(--clr-light-tile);
+    box-shadow: 2pt 2pt 2pt rgba(0,0,0,0.35),
+                -1pt -1pt 2pt rgba(255,255,255,0.5);
+}
+
+.light-square.selected-square{
+    background-color: var(--clr-selected-tile);
+    box-shadow: 0 0 10pt 1pt var(--clr-selected-tile) !important;
+    z-index: 10;
+}
+
+.top-left{
+    background-color:var(--clr-light-tile);
+    box-shadow: 2pt 2pt 2pt rgba(0,0,0,0.3),
+                -2pt -3pt 2pt rgba(255,255,255,0.8);
+}
+
+.top-light{
+    background-color:var(--clr-light-tile);
+    box-shadow: 2pt 2pt 2pt rgba(0,0,0,0.35),
+                0pt -2pt 2pt rgba(255,255,255,0.8);
+}
+
+.left-light{
+    background-color:var(--clr-light-tile);
+    box-shadow: 2pt 2pt 2pt rgba(0,0,0,0.35),
+                -2pt 0pt 2pt rgba(255,255,255,0.8);
+}
+
+.selected-square{
+    background-color: var(--clr-selected-tile);
+    box-shadow: 0 0 10pt 1pt var(--clr-selected-tile);
+    z-index: 10;
+}
+
+.selected-square:after{
+    content:'';
+    position:absolute;
+    width:80%;
+    height:80%;
+    border:2pt solid var(--clr-weird-square-light-selected);
+    border-radius: 10%;
 }
